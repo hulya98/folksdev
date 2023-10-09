@@ -8,11 +8,11 @@ data class Customer(
         @Id
         @GeneratedValue(generator = "UUID")
         @GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
-        val id: String?,
+        val id: String? = null,
 
-        val name: String?,
-        val surname: String?,
+        val name: String?  = null,
+        val surname: String?  = null,
 
         @OneToMany(mappedBy = "customer", fetch = FetchType.LAZY)
-        val account: Set<Account>?
+        val account: Set<Account>? = HashSet()
 )

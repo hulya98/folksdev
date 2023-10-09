@@ -6,18 +6,19 @@ import java.time.LocalDateTime
 import javax.persistence.*
 
 @Entity
+@Table(name = "transactions")
 data class Transaction(
         @Id
         @GeneratedValue(generator = "UUID")
         @GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
-        var id: String?,
+        var id: String? = null,
         val transactionType: TransactiontType? = TransactiontType.INITIAL,
-        val amount: BigDecimal?,
-        val transactionDate: LocalDateTime?,
+        val amount: BigDecimal? = null,
+        val transactionDate: LocalDateTime? = null,
 
         @ManyToOne(fetch = FetchType.LAZY, optional = false, cascade = [CascadeType.ALL])
         @JoinColumn(name = "account_id", nullable = false)
-        val account: Account
+        val account: Account? = null
 
 ) {
 

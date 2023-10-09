@@ -29,10 +29,12 @@ public class AccountService {
                 createAccountRequest.getInitialCredit(),
                 LocalDateTime.now());
 
-        if (createAccountRequest.getInitialCredit().compareTo(BigDecimal.ZERO) > 0) {
-            Transaction transaction = transactionService.CreateTransaction();
+//        if (createAccountRequest.getInitialCredit().compareTo(BigDecimal.ZERO) > 0) {
+//            Transaction transaction = transactionService.CreateTransaction();
+//
+//        }
 
-        }
+        return null;
     }
 
 }
