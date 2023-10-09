@@ -18,8 +18,8 @@ data class Account(
         @JoinColumn(name = "customer_id", nullable = false)
         val customer: Customer? = null,
 
-        @OneToMany(mappedBy = "account", fetch = FetchType.LAZY)
-        val transaction: Set<Transaction>? = HashSet()
+        @OneToMany(mappedBy = "account", fetch = FetchType.LAZY, cascade = [CascadeType.ALL])
+        val transaction: Set<Transaction> = HashSet()
 
 
 ) {

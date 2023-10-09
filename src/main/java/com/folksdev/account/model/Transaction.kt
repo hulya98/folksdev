@@ -16,7 +16,7 @@ data class Transaction(
         val amount: BigDecimal? = null,
         val transactionDate: LocalDateTime? = null,
 
-        @ManyToOne(fetch = FetchType.LAZY, optional = false, cascade = [CascadeType.ALL])
+        @ManyToOne(fetch = FetchType.LAZY, optional = false)
         @JoinColumn(name = "account_id", nullable = false)
         val account: Account? = null
 
